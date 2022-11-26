@@ -3,27 +3,25 @@ from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import filedialog
 from tkinter import messagebox
-#create gui application using tkinter
 import easyocr
 import numpy as np
 import time
 import imutils
 import cv2
-#easyocr and cv2 for optical character recognition, so it can read the license plate.
 
-#la tsewe el gui app w title ela w soora icon mn barra w geometry bta3tiya size length and width wl resizable false false ya3ne ma btekbar el gui bl size
+
 root = Tk()
 root.title( "License Plate Recognizer" )
 root.iconbitmap( "icon.ico" )
 root.geometry( "1000x600" )
 root.resizable( False, False )
-my_Canvas = Canvas( root, height=1000, width=600 ) #canvas is a tool bl tkinter la ta3ml w tersom shapes sta3mlta la ersom el rectangle bl app yali bhot el soora wl buttons. 
+my_Canvas = Canvas( root, height=1000, width=600 )
 
 
 
 def Select() :
     global image3
-    root.filename = filedialog.askopenfilename 
+    root.filename = filedialog.askopenfilename \
         ( initialdir="Libraries", title="Select Image",
           filetypes=(("JPG", "*.jpg"), ("PNG", "*.png")) )
     entry.configure( state='normal' )
